@@ -4,12 +4,12 @@
 
 /* CSS Variables for Dynamic Colors */
 :root {
-    --ambient-color-1: #1a1a2e;
-    --ambient-color-2: #16213e;
-    --ambient-color-3: #0f3460;
-    --ambient-color-4: #e94560;
-    --ambient-intensity: 0.6;
-    --ambient-blur: 150px;
+    --ambient-color-1: #ff6b6b;
+    --ambient-color-2: #4ecdc4;
+    --ambient-color-3: #a29bfe;
+    --ambient-color-4: #fd79a8;
+    --ambient-intensity: 0.4;
+    --ambient-blur: 180px;
     --transition-ambient: 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

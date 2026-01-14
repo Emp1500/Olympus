@@ -9,13 +9,15 @@
     left: 0;
     right: 0;
     height: var(--player-height);
-    background: var(--bg-secondary);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, rgba(255, 107, 107, 0.1) 0%, var(--bg-secondary) 100%);
+    border-top: 1px solid rgba(255, 107, 107, 0.3);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
     z-index: var(--z-player);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 /* Player Left - Now Playing Info */
@@ -151,13 +153,15 @@
 .control-btn.play-btn {
     width: 32px;
     height: 32px;
-    background: var(--text-primary);
-    color: var(--bg-primary);
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: var(--text-primary);
     font-size: 18px;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
 }
 
 .control-btn.play-btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5), 0 0 40px rgba(78, 205, 196, 0.3);
 }
 
 /* Progress Bar */
