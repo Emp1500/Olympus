@@ -120,7 +120,7 @@ const mockData = {
             description: 'The hottest 50 tracks right now',
             cover: 'https://i.scdn.co/image/ab67706f00000003b3470e0c0ed6a2c1c21f5591',
             colors: ['#1db954', '#121212', '#1ed760', '#191414'],
-            owner: 'MeloVibe',
+            owner: 'Olympus',
             songs: ['1', '2', '3', '4', '5', '6']
         },
         {
@@ -129,7 +129,7 @@ const mockData = {
             description: 'Relax and unwind with these mellow tracks',
             cover: 'https://i.scdn.co/image/ab67706f000000034d26d431869cabfc53c67d8e',
             colors: ['#5b7fa3', '#1a2634', '#8ab4d6', '#0d141b'],
-            owner: 'MeloVibe',
+            owner: 'Olympus',
             songs: ['2', '4', '7', '10']
         },
         {
@@ -138,7 +138,7 @@ const mockData = {
             description: 'High energy tracks to power your workout',
             cover: 'https://i.scdn.co/image/ab67706f00000003e4b3f1c3a4c7a4c7a4c7a4c7',
             colors: ['#e63946', '#ff6b6b', '#1d3557', '#457b9d'],
-            owner: 'MeloVibe',
+            owner: 'Olympus',
             songs: ['1', '3', '5', '9', '12']
         }
     ],

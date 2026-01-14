@@ -1,5 +1,5 @@
 /* =============================================
-   MeloVibe - Ambient Color Controller
+   Olympus - Ambient Color Controller
    Apple Music Style Dynamic Backgrounds
    ============================================= */
 

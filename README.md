@@ -1,4 +1,6 @@
-# MeloVibe - Music Streaming Platform
+# Olympus - Music Streaming Platform
+
+Where music takes us to heaven.
 
 A modern, professional music streaming web application inspired by Spotify and Apple Music. Built with a focus on sleek UI/UX and seamless user experience.
 
@@ -188,7 +190,7 @@ AppleMusic Clone/
 ### 1. Sidebar Navigation
 ```
 ┌─────────────────┐
-│  🎵 MeloVibe    │
+│  🎵 Olympus     │
 ├─────────────────┤
 │  🏠 Home        │
 │  🔍 Search      │

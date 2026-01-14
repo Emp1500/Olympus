@@ -1,5 +1,5 @@
 /* =============================================
-   MeloVibe - Utility Functions
+   Olympus - Utility Functions
    ============================================= */
 
 const Utils = {

@@ -31,7 +31,7 @@ app.listen(PORT, () => {
     console.log(`
     ╔═══════════════════════════════════════════════╗
     ║                                               ║
-    ║   🎵 MeloVibe Server Running                  
+    ║   🎵 Olympus Server Running
     ║                                               ║
     ║   Local:   http://localhost:${PORT}           ║
     ║                                               ║

@@ -1,5 +1,5 @@
 /* =============================================
-   MeloVibe - Music Player Controller
+   Olympus - Music Player Controller
    ============================================= */
 
 class MusicPlayer {

@@ -1,8 +1,8 @@
 /* =============================================
-   MeloVibe - Main Application
+   Olympus - Main Application
    ============================================= */
 
-class MeloVibeApp {
+class OlympusApp {
     constructor() {
         this.currentPage = 'home';
         this.searchTimeout = null;
@@ -678,10 +678,10 @@ class MeloVibeApp {
 // Initialize app when DOM is ready
 let app;
 document.addEventListener('DOMContentLoaded', () => {
-    app = new MeloVibeApp();
+    app = new OlympusApp();
 });
 
 // Export for module usage
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = MeloVibeApp;
+    module.exports = OlympusApp;
 }

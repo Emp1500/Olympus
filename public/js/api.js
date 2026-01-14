@@ -1,5 +1,5 @@
 /* =============================================
-   MeloVibe - API Service
+   Olympus - API Service
    ============================================= */
 
 const API = {
@@ -194,7 +194,7 @@ const MockData = {
             description: 'The hottest 50 tracks right now',
             cover: 'assets/images/playlists/todays-top-hits.svg',
             colors: ['#1db954', '#121212', '#1ed760', '#191414'],
-            owner: 'MeloVibe',
+            owner: 'Olympus',
             songs: ['1', '2', '3', '4', '5', '6']
         },
         {
@@ -203,7 +203,7 @@ const MockData = {
             description: 'Relax and unwind with these mellow tracks',
             cover: 'assets/images/playlists/chill-vibes.svg',
             colors: ['#5b7fa3', '#1a2634', '#8ab4d6', '#0d141b'],
-            owner: 'MeloVibe',
+            owner: 'Olympus',
             songs: ['2', '4', '7', '10']
         },
         {
@@ -212,7 +212,7 @@ const MockData = {
             description: 'High energy tracks to power your workout',
             cover: 'assets/images/playlists/workout-mix.svg',
             colors: ['#e63946', '#ff6b6b', '#1d3557', '#457b9d'],
-            owner: 'MeloVibe',
+            owner: 'Olympus',
             songs: ['1', '3', '5', '9', '12']
         },
         {
@@ -221,7 +221,7 @@ const MockData = {
             description: 'Perfect songs for late night drives',
             cover: 'assets/images/playlists/midnight-drive.svg',
             colors: ['#2d3436', '#636e72', '#0984e3', '#74b9ff'],
-            owner: 'MeloVibe',
+            owner: 'Olympus',
             songs: ['1', '8', '10']
         },
         {
@@ -230,7 +230,7 @@ const MockData = {
             description: 'Sunny vibes for the perfect summer day',
             cover: 'assets/images/playlists/summer-hits.svg',
             colors: ['#f9ca24', '#f0932b', '#eb4d4b', '#ff7979'],
-            owner: 'MeloVibe',
+            owner: 'Olympus',
             songs: ['2', '6', '7', '11']
         },
         {
@@ -239,7 +239,7 @@ const MockData = {
             description: 'Uplifting songs to boost your mood',
             cover: 'assets/images/playlists/feel-good.svg',
             colors: ['#a29bfe', '#6c5ce7', '#fd79a8', '#e84393'],
-            owner: 'MeloVibe',
+            owner: 'Olympus',
             songs: ['2', '3', '5', '7', '9', '11']
         }
     ],
