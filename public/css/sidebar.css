@@ -1,0 +1,262 @@
+/* =============================================
+   MeloVibe - Sidebar Styles
+   ============================================= */
+
+/* Sidebar Container */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--player-height));
+    background: var(--bg-secondary);
+    display: flex;
+    flex-direction: column;
+    z-index: var(--z-sidebar);
+    transition: width var(--transition-normal);
+    overflow: hidden;
+}
+
+/* Sidebar Header / Logo */
+.sidebar-header {
+    padding: 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-primary);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo i {
+    font-size: 28px;
+    color: var(--accent-primary);
+}
+
+/* Navigation Section */
+.sidebar-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 12px;
+    overflow-y: auto;
+}
+
+/* Nav List */
+.nav-list {
+    padding: 0;
+    margin: 0;
+}
+
+/* Nav Item */
+.nav-item {
+    margin-bottom: 4px;
+}
+
+.nav-item a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 14px;
+    transition: all var(--transition-fast);
+}
+
+.nav-item a:hover {
+    color: var(--text-primary);
+}
+
+.nav-item.active a {
+    color: var(--text-primary);
+    background: var(--hover-highlight);
+}
+
+.nav-item a i {
+    font-size: 24px;
+    width: 24px;
+    text-align: center;
+}
+
+/* Sidebar Divider */
+.sidebar-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 12px 0;
+}
+
+/* Playlists Section */
+.playlists-section {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 24px;
+}
+
+.playlists-section .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    padding: 8px 12px;
+    margin-bottom: 8px;
+}
+
+/* Playlist List */
+.playlist-list {
+    padding: 0;
+    margin: 0;
+}
+
+.playlist-item {
+    margin-bottom: 2px;
+}
+
+.playlist-item a {
+    display: block;
+    padding: 8px 12px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.playlist-item a:hover {
+    color: var(--text-primary);
+}
+
+/* Sidebar Toggle Button (for mobile) */
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    align-items: center;
+    justify-content: center;
+    z-index: calc(var(--z-sidebar) + 1);
+    box-shadow: var(--shadow-md);
+}
+
+/* Sidebar Overlay (for mobile) */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: calc(var(--z-sidebar) - 1);
+}
+
+.sidebar-overlay.active {
+    display: block;
+}
+
+/* Collapsed State */
+.sidebar.collapsed {
+    width: var(--sidebar-collapsed-width);
+}
+
+.sidebar.collapsed .logo span,
+.sidebar.collapsed .nav-item span,
+.sidebar.collapsed .playlists-section {
+    display: none;
+}
+
+.sidebar.collapsed .nav-item a {
+    justify-content: center;
+    padding: 12px;
+}
+
+/* Create Playlist and Liked Songs Special Styles */
+.nav-item a[href="#create-playlist"] i,
+.nav-item a[href="#liked-songs"] i {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+}
+
+.nav-item a[href="#create-playlist"] i {
+    background: var(--text-secondary);
+    color: var(--bg-primary);
+}
+
+.nav-item a[href="#liked-songs"] i {
+    background: linear-gradient(135deg, #450af5, #c4efd9);
+    color: var(--text-primary);
+}
+
+/* Hover Effects for Special Items */
+.nav-item a[href="#create-playlist"]:hover i {
+    background: var(--text-primary);
+}
+
+/* Scrollbar Styling for Playlists */
+.playlists-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.playlists-section::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.playlists-section::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+.playlists-section:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Resize Handle */
+.sidebar-resize {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    cursor: ew-resize;
+    background: transparent;
+    transition: background var(--transition-fast);
+}
+
+.sidebar-resize:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar-toggle {
+        display: flex;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}

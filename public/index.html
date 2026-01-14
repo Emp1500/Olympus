@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeloVibe - Music Streaming</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/player.css">
+    <link rel="stylesheet" href="css/ambient.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Ambient Background -->
+    <div class="ambient-background" id="ambientBackground">
+        <div class="ambient-blob ambient-blob-1"></div>
+        <div class="ambient-blob ambient-blob-2"></div>
+        <div class="ambient-blob ambient-blob-3"></div>
+        <div class="ambient-blob ambient-blob-4"></div>
+    </div>
+
+    <!-- Mobile Sidebar Toggle -->
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+        <i class="bi bi-list"></i>
+    </button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="bi bi-music-note-beamed"></i>
+                    <span>MeloVibe</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item active" data-page="home">
+                        <a href="#home">
+                            <i class="bi bi-house-door-fill"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-page="search">
+                        <a href="#search">
+                            <i class="bi bi-search"></i>
+                            <span>Search</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-page="library">
+                        <a href="#library">
+                            <i class="bi bi-collection-fill"></i>
+                            <span>Your Library</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="sidebar-divider"></div>
+
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#create-playlist">
+                            <i class="bi bi-plus-square-fill"></i>
+                            <span>Create Playlist</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#liked-songs">
+                            <i class="bi bi-heart-fill"></i>
+                            <span>Liked Songs</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="sidebar-divider"></div>
+
+                <div class="playlists-section">
+                    <h6 class="section-title">Playlists</h6>
+                    <ul class="playlist-list" id="sidebarPlaylists">
+                        <li class="playlist-item">
+                            <a href="#playlist/1">My Mix #1</a>
+                        </li>
+                        <li class="playlist-item">
+                            <a href="#playlist/2">Chill Vibes</a>
+                        </li>
+                        <li class="playlist-item">
+                            <a href="#playlist/3">Workout Energy</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <header class="top-nav">
+                <div class="nav-controls">
+                    <button class="nav-btn" id="btnBack" aria-label="Go back">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="nav-btn" id="btnForward" aria-label="Go forward">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="search-container" id="searchContainer">
+                    <i class="bi bi-search search-icon"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="What do you want to listen to?">
+                </div>
+
+                <div class="user-controls">
+                    <button class="btn-upgrade">
+                        Upgrade
+                    </button>
+                    <button class="btn-notifications" aria-label="Notifications">
+                        <i class="bi bi-bell"></i>
+                    </button>
+                    <div class="user-profile" id="userProfile">
+                        <div class="user-avatar">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                        <span class="user-name">User</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content" id="pageContent">
+                <!-- Home Page -->
+                <section class="page home-page active" id="homePage">
+                    <!-- Hero Section -->
+                    <div class="hero-section">
+                        <div class="hero-gradient"></div>
+                        <div class="hero-content">
+                            <h1>Good Evening</h1>
+                        </div>
+                    </div>
+
+                    <!-- Quick Picks Grid -->
+                    <div class="quick-picks-section">
+                        <div class="quick-picks-grid" id="quickPicks">
+                            <!-- Quick pick cards will be dynamically added -->
+                        </div>
+                    </div>
+
+                    <!-- Recently Played Section -->
+                    <section class="content-section">
+                        <div class="section-header">
+                            <h2>Recently Played</h2>
+                            <a href="#" class="see-all">See all</a>
+                        </div>
+                        <div class="cards-row" id="recentlyPlayed">
+                            <!-- Cards will be dynamically added -->
+                        </div>
+                    </section>
+
+                    <!-- Made For You Section -->
+                    <section class="content-section">
+                        <div class="section-header">
+                            <h2>Made For You</h2>
+                            <a href="#" class="see-all">See all</a>
+                        </div>
+                        <div class="cards-row" id="madeForYou">
+                            <!-- Cards will be dynamically added -->
+                        </div>
+                    </section>
+
+                    <!-- Popular Artists Section -->
+                    <section class="content-section">
+                        <div class="section-header">
+                            <h2>Popular Artists</h2>
+                            <a href="#" class="see-all">See all</a>
+                        </div>
+                        <div class="cards-row" id="popularArtists">
+                            <!-- Artist cards will be dynamically added -->
+                        </div>
+                    </section>
+
+                    <!-- Featured Charts Section -->
+                    <section class="content-section">
+                        <div class="section-header">
+                            <h2>Featured Charts</h2>
+                            <a href="#" class="see-all">See all</a>
+                        </div>
+                        <div class="cards-row" id="featuredCharts">
+                            <!-- Chart cards will be dynamically added -->
+                        </div>
+                    </section>
+                </section>
+
+                <!-- Search Page -->
+                <section class="page search-page" id="searchPage">
+                    <h1>Search</h1>
+                    <div class="search-results" id="searchResults">
+                        <!-- Search results will appear here -->
+                    </div>
+                    <div class="browse-categories">
+                        <h2>Browse All</h2>
+                        <div class="categories-grid" id="categoriesGrid">
+                            <!-- Category cards will be dynamically added -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Library Page -->
+                <section class="page library-page" id="libraryPage">
+                    <div class="library-header">
+                        <h1>Your Library</h1>
+                        <div class="library-controls">
+                            <button class="btn-icon" aria-label="Search in library">
+                                <i class="bi bi-search"></i>
+                            </button>
+                            <button class="btn-icon" aria-label="Add">
+                                <i class="bi bi-plus-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="library-filters">
+                        <button class="filter-chip active">Playlists</button>
+                        <button class="filter-chip">Albums</button>
+                        <button class="filter-chip">Artists</button>
+                    </div>
+                    <div class="library-content" id="libraryContent">
+                        <!-- Library items will be dynamically added -->
+                    </div>
+                </section>
+
+                <!-- Playlist View Page -->
+                <section class="page playlist-page" id="playlistPage">
+                    <div class="playlist-header">
+                        <div class="playlist-cover">
+                            <img src="" alt="Playlist Cover" id="playlistCover">
+                        </div>
+                        <div class="playlist-info">
+                            <span class="playlist-type">Playlist</span>
+                            <h1 class="playlist-title" id="playlistTitle">Playlist Name</h1>
+                            <p class="playlist-description" id="playlistDescription">Playlist description goes here</p>
+                            <div class="playlist-meta">
+                                <span class="owner" id="playlistOwner">Username</span>
+                                <span class="dot">•</span>
+                                <span class="song-count" id="playlistSongCount">0 songs</span>
+                                <span class="dot">•</span>
+                                <span class="duration" id="playlistDuration">0 hr 0 min</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playlist-actions">
+                        <button class="btn-play-large" id="btnPlayPlaylist">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                        <button class="btn-icon-large" aria-label="Shuffle">
+                            <i class="bi bi-shuffle"></i>
+                        </button>
+                        <button class="btn-icon-large" aria-label="Add to library">
+                            <i class="bi bi-heart"></i>
+                        </button>
+                        <button class="btn-icon-large" aria-label="More options">
+                            <i class="bi bi-three-dots"></i>
+                        </button>
+                    </div>
+                    <div class="tracks-list">
+                        <div class="tracks-header">
+                            <span class="track-number">#</span>
+                            <span class="track-title">Title</span>
+                            <span class="track-album">Album</span>
+                            <span class="track-date">Date Added</span>
+                            <span class="track-duration"><i class="bi bi-clock"></i></span>
+                        </div>
+                        <div class="tracks-body" id="playlistTracks">
+                            <!-- Tracks will be dynamically added -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Now Playing / Full Screen Player -->
+                <section class="page now-playing-page" id="nowPlayingPage">
+                    <!-- Now Playing Ambient Background -->
+                    <div class="now-playing-ambient" id="npAmbient">
+                        <div class="ambient-blob ambient-blob-1"></div>
+                        <div class="ambient-blob ambient-blob-2"></div>
+                    </div>
+                    <div class="now-playing-container">
+                        <div class="now-playing-artwork album-art-glow">
+                            <img src="" alt="Album Art" id="npArtwork">
+                        </div>
+                        <div class="now-playing-info">
+                            <h1 class="np-title" id="npTitle">Song Title</h1>
+                            <p class="np-artist" id="npArtist">Artist Name</p>
+                        </div>
+                        <div class="now-playing-progress">
+                            <input type="range" class="progress-slider" id="npProgressSlider" min="0" max="100" value="0">
+                            <div class="time-display">
+                                <span id="npCurrentTime">0:00</span>
+                                <span id="npTotalTime">0:00</span>
+                            </div>
+                        </div>
+                        <div class="now-playing-controls">
+                            <button class="np-btn" id="npShuffle" aria-label="Shuffle">
+                                <i class="bi bi-shuffle"></i>
+                            </button>
+                            <button class="np-btn" id="npPrev" aria-label="Previous">
+                                <i class="bi bi-skip-start-fill"></i>
+                            </button>
+                            <button class="np-btn np-play-btn" id="npPlayPause" aria-label="Play/Pause">
+                                <i class="bi bi-play-fill"></i>
+                            </button>
+                            <button class="np-btn" id="npNext" aria-label="Next">
+                                <i class="bi bi-skip-end-fill"></i>
+                            </button>
+                            <button class="np-btn" id="npRepeat" aria-label="Repeat">
+                                <i class="bi bi-repeat"></i>
+                            </button>
+                        </div>
+                        <div class="now-playing-extras">
+                            <button class="np-btn" id="npLyrics" aria-label="Lyrics">
+                                <i class="bi bi-mic"></i>
+                            </button>
+                            <button class="np-btn" id="npQueue" aria-label="Queue">
+                                <i class="bi bi-list-ul"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Bottom Player Bar -->
+    <footer class="player-bar" id="playerBar">
+        <div class="player-left">
+            <div class="now-playing-card">
+                <div class="album-art" id="playerAlbumArt">
+                    <img src="assets/images/default-album.png" alt="Album Art">
+                </div>
+                <div class="song-info">
+                    <span class="song-title" id="playerSongTitle">No song playing</span>
+                    <span class="song-artist" id="playerSongArtist">-</span>
+                </div>
+                <button class="btn-like" id="btnLikeSong" aria-label="Like song">
+                    <i class="bi bi-heart"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="player-center">
+            <div class="player-controls">
+                <button class="control-btn" id="btnShuffle" aria-label="Shuffle">
+                    <i class="bi bi-shuffle"></i>
+                </button>
+                <button class="control-btn" id="btnPrev" aria-label="Previous">
+                    <i class="bi bi-skip-start-fill"></i>
+                </button>
+                <button class="control-btn play-btn" id="btnPlayPause" aria-label="Play">
+                    <i class="bi bi-play-fill"></i>
+                </button>
+                <button class="control-btn" id="btnNext" aria-label="Next">
+                    <i class="bi bi-skip-end-fill"></i>
+                </button>
+                <button class="control-btn" id="btnRepeat" aria-label="Repeat">
+                    <i class="bi bi-repeat"></i>
+                </button>
+            </div>
+            <div class="progress-container">
+                <span class="time-current" id="timeCurrent">0:00</span>
+                <div class="progress-bar-wrapper">
+                    <input type="range" class="progress-bar" id="progressBar" min="0" max="100" value="0">
+                </div>
+                <span class="time-total" id="timeTotal">0:00</span>
+            </div>
+        </div>
+
+        <div class="player-right">
+            <button class="control-btn" id="btnNowPlaying" aria-label="Now playing view">
+                <i class="bi bi-music-note-list"></i>
+            </button>
+            <button class="control-btn" id="btnQueue" aria-label="Queue">
+                <i class="bi bi-list-ul"></i>
+            </button>
+            <button class="control-btn" id="btnDevices" aria-label="Connect to device">
+                <i class="bi bi-speaker"></i>
+            </button>
+            <div class="volume-container">
+                <button class="control-btn" id="btnMute" aria-label="Mute">
+                    <i class="bi bi-volume-up-fill"></i>
+                </button>
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50">
+            </div>
+            <button class="control-btn" id="btnFullscreen" aria-label="Fullscreen">
+                <i class="bi bi-arrows-fullscreen"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Queue Sidebar (Hidden by default) -->
+    <aside class="queue-sidebar" id="queueSidebar">
+        <div class="queue-header">
+            <h3>Queue</h3>
+            <button class="btn-close-queue" id="btnCloseQueue">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div class="queue-now-playing">
+            <h4>Now Playing</h4>
+            <div class="queue-current-song" id="queueCurrentSong">
+                <!-- Current song will be displayed here -->
+            </div>
+        </div>
+        <div class="queue-next">
+            <h4>Next Up</h4>
+            <div class="queue-list" id="queueList">
+                <!-- Queue items will be dynamically added -->
+            </div>
+        </div>
+    </aside>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ambient.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
